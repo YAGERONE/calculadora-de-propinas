@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, FlatList, StyleSheet } from 'react-native';
 
-// Definir la interfaz para los elementos del historial
+
 interface HistoryEntry {
   id: string;
   bill: string;
@@ -16,7 +16,7 @@ const Appcalculadora = () => {
   const [useCustomTip, setUseCustomTip] = useState(false);
   const [tipAmount, setTipAmount] = useState('0.00');
   const [totalAmount, setTotalAmount] = useState('0.00');
-  const [history, setHistory] = useState<HistoryEntry[]>([]); // Especificar el tipo del estado
+  const [history, setHistory] = useState<HistoryEntry[]>([]);
 
   useEffect(() => {
     calculateTip();
@@ -44,7 +44,7 @@ const Appcalculadora = () => {
       tip: tip.toFixed(2),
       total: total.toFixed(2),
     };
-    setHistory((prev) => [newEntry, ...prev]); // Aquí ya no hay error
+    setHistory((prev) => [newEntry, ...prev]); 
   };
 
   const handlePredefinedTip = (percentage: number) => {
